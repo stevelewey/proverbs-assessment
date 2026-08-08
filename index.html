@@ -110,6 +110,15 @@ label { cursor: pointer; }
 }
 .weakest-pillar h3 { color: #1A1410; margin-bottom: 10px; }
 .weakest-pillar p { color: #444; line-height: 1.7; }
+.community-note {
+  background: white;
+  border-left: 4px solid #C9A84C;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.community-note h3 { color: #1A1410; margin-bottom: 10px; }
+.community-note p { color: #444; line-height: 1.7; }
 #email-gate {
   display: none;
   background: #1A1410;
@@ -121,24 +130,7 @@ label { cursor: pointer; }
 }
 #email-gate h2 { margin-bottom: 15px; font-size: 1.8em; color: #C9A84C; }
 #email-gate p { margin-bottom: 25px; font-size: 1.1em; line-height: 1.6; color: #FAF6EF; }
-.cta-button {
-  display: inline-block;
-  background: #C9A84C;
-  color: #1A1410;
-  padding: 18px 45px;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s;
-  font-family: 'Georgia', serif;
-  letter-spacing: 0.04em;
-}
-.cta-button:hover {
-  background: #FAF6EF;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
+#email-gate .ml-form-embedWrapper { margin: 0 auto; }
 </style>
 </head>
 <body>
@@ -161,9 +153,62 @@ label { cursor: pointer; }
 
   <div id="email-gate">
     <h2>Your Next Step Is Ready</h2>
-    <p>The 21-Day Proverbs Challenge takes the foundation you've just assessed and puts it into practice — one principle, one practice, one day at a time.</p>
-    <p style="margin-bottom: 30px;">It's a self-guided course built from 35 years in Proverbs, designed for the marketplace leader who is ready to move from knowing to doing.</p>
-    <a href="https://www.lightbasedleadership.com/21-day-challenge" class="cta-button">Learn More About the 21-Day Proverbs Challenge</a>
+    <p>The 21-Day Proverbs Challenge takes the foundation you've just assessed and puts it into practice — one principle, one practice, one day at a time. It's a self-guided course built from 35 years in Proverbs, designed for the marketplace leader who is ready to move from knowing to doing.</p>
+
+    <!-- MailerLite embed form — see notes below the code for required setup -->
+    <div id="mlb2-44227632" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44227632">
+      <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+          <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2539447/forms/194247183638202342/subscribe" data-code="" method="post" target="_blank">
+              <div class="ml-form-formContent">
+                <div class="ml-form-fieldRow">
+                  <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                    <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" required style="width:100%;padding:14px;border-radius:6px;border:1px solid #ccc;margin-bottom:10px;font-family:'Georgia',serif;">
+                  </div>
+                </div>
+                <div class="ml-form-fieldRow ml-last-item">
+                  <div class="ml-field-group ml-field-name">
+                    <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="Name" autocomplete="given-name" style="width:100%;padding:14px;border-radius:6px;border:1px solid #ccc;margin-bottom:10px;font-family:'Georgia',serif;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hidden fields: capture assessment results as MailerLite custom fields.
+                   IMPORTANT: create these custom fields in your MailerLite account first
+                   (Subscribers > Custom Fields) with these exact keys, or MailerLite will
+                   silently ignore them: assessment_score, assessment_category,
+                   weakest_pillar, discernment_score -->
+              <input type="hidden" name="fields[assessment_score]" id="ml-field-total" value="">
+              <input type="hidden" name="fields[assessment_category]" id="ml-field-category" value="">
+              <input type="hidden" name="fields[weakest_pillar]" id="ml-field-weakest" value="">
+              <input type="hidden" name="fields[discernment_score]" id="ml-field-discernment" value="">
+
+              <input type="hidden" name="ml-submit" value="1">
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary" style="width:100%;background:#C9A84C;color:#1A1410;border:none;padding:16px 40px;font-size:1.1em;font-weight:bold;border-radius:6px;cursor:pointer;font-family:'Georgia',serif;letter-spacing:0.04em;">Send Me My Full Results &amp; the Challenge</button>
+              </div>
+              <input type="hidden" name="anticsrf" value="true">
+            </form>
+          </div>
+          <div class="ml-form-successBody row-success" style="display:none;">
+            <div class="ml-form-successContent">
+              <h4 style="color:#C9A84C;">Thank you!</h4>
+              <p style="color:#FAF6EF;">Check your inbox — your full results and the 21-Day Challenge details are on the way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function ml_webform_success_44227632() {
+        var $ = ml_jQuery || jQuery;
+        $('.ml-subscribe-form-44227632 .row-success').show();
+        $('.ml-subscribe-form-44227632 .row-form').hide();
+      }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+    <script>fetch("https://assets.mailerlite.com/jsonp/2539447/forms/194247183638202342/takel")</script>
   </div>
 </div>
 
@@ -227,6 +272,17 @@ const questions = [
       "I invest in creating the right environment rather than just working harder.",
       "My workspace, schedule, and key relationships support my mission.",
       "I have deliberately designed my life to align with my deepest calling and purpose."
+    ]
+  },
+  {
+    pillar: 5,
+    title: "PILLAR 5: COUNSEL & DISCERNMENT",
+    subtitle: "Without Counsel, Plans Fail",
+    definition: "Whether you have real people to think decisions through with, confidence that your recent decisions were actually sound, and a reliable way to filter fast tools — including AI — through discernment rather than blind trust.",
+    questions: [
+      "I have people I regularly bring my hardest business decisions to before I decide, not just after.",
+      "I feel confident that my recent significant decisions were actually sound, not just fast.",
+      "When I use AI tools in my business, I have a reliable way to verify whether what it's telling me is actually right."
     ]
   }
 ];
@@ -293,7 +349,7 @@ form.appendChild(submitBtn);
 
 function calculateScore() {
   let allAnswered = true;
-  for (let i = 1; i <= 28; i++) {
+  for (let i = 1; i <= 31; i++) {
     const checked = Array.from(document.querySelectorAll(`input[name="q${i}"]`)).some(r => r.checked);
     if (!checked) { allAnswered = false; break; }
   }
@@ -302,12 +358,15 @@ function calculateScore() {
     return;
   }
 
-  let integrityScore = 0, intentionalityScore = 0, initiativeScore = 0, environmentScore = 0;
+  let integrityScore = 0, intentionalityScore = 0, initiativeScore = 0, environmentScore = 0, discernmentScore = 0;
   for (let i = 1; i <= 7; i++) integrityScore += parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
   for (let i = 8; i <= 14; i++) intentionalityScore += parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
   for (let i = 15; i <= 21; i++) initiativeScore += parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
   for (let i = 22; i <= 28; i++) environmentScore += parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
+  for (let i = 29; i <= 31; i++) discernmentScore += parseInt(document.querySelector(`input[name="q${i}"]:checked`).value);
 
+  // Total score and category are based on the original 4 pillars (28 questions, max 140)
+  // so existing thresholds don't need to change. Discernment is tracked separately.
   const totalScore = integrityScore + intentionalityScore + initiativeScore + environmentScore;
 
   let category, interpretation;
@@ -339,6 +398,13 @@ function calculateScore() {
     'Environment': "Your Environment score suggests the systems, relationships, and structures around you may not be supporting your mission as well as they could. Environment is often the last thing leaders examine and the first thing that's actually limiting them. Small changes here tend to have wide impact."
   };
 
+  let discernmentNote;
+  if (discernmentScore <= 9) {
+    discernmentNote = "This is worth paying attention to. Even strong operators lose sharpness without people to think decisions through with, and without a reliable way to filter fast tools like AI through real discernment. There's no need to solve this today — just notice it.";
+  } else {
+    discernmentNote = "You've got real counsel and discernment working in your favor here — one of the more protective assets any leader can have, and one that's easy to take for granted until it's missing.";
+  }
+
   document.getElementById('results').innerHTML = `
     <div class="results-container">
       <div class="total-score">
@@ -351,6 +417,7 @@ function calculateScore() {
         <div class="pillar-score"><h3>Intentionality</h3><div class="score">${intentionalityScore}</div><div style="font-size:0.9em;color:#666;">out of 35</div></div>
         <div class="pillar-score"><h3>Initiative</h3><div class="score">${initiativeScore}</div><div style="font-size:0.9em;color:#666;">out of 35</div></div>
         <div class="pillar-score"><h3>Environment</h3><div class="score">${environmentScore}</div><div style="font-size:0.9em;color:#666;">out of 35</div></div>
+        <div class="pillar-score"><h3>Counsel &amp; Discernment</h3><div class="score">${discernmentScore}</div><div style="font-size:0.9em;color:#666;">out of 15</div></div>
       </div>
       <div class="interpretation">
         <h3>What your score reveals</h3>
@@ -360,8 +427,18 @@ function calculateScore() {
         <h3>Your area of greatest opportunity: ${weakestPillar} (${lowestScore}/35)</h3>
         <p>${weakestExplanations[weakestPillar]}</p>
       </div>
+      <div class="community-note">
+        <h3>On Counsel &amp; Discernment (${discernmentScore}/15)</h3>
+        <p>${discernmentNote}</p>
+      </div>
     </div>
   `;
+
+  // Pass results into the MailerLite hidden fields before the form is shown
+  document.getElementById('ml-field-total').value = totalScore;
+  document.getElementById('ml-field-category').value = category;
+  document.getElementById('ml-field-weakest').value = weakestPillar;
+  document.getElementById('ml-field-discernment').value = discernmentScore;
 
   document.getElementById('results').style.display = 'block';
   document.getElementById('email-gate').style.display = 'block';
